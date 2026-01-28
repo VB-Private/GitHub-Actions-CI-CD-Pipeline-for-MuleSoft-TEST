@@ -18,36 +18,37 @@
 	</properties>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.2.0</version>
-			</plugin>
-			<plugin>
-  <groupId>org.mule.tools.maven</groupId>
-  <artifactId>mule-maven-plugin</artifactId>
-  <version>${mule.maven.plugin.version}</version>
-  <extensions>true</extensions>
-  <configuration>
-    <deployment>
-      <anypointPlatform>
-        <username>${anypoint.username}</username>
-        <password>${anypoint.password}</password>
-        <organization>${anypoint.organization}</organization>
-        <environment>${anypoint.environment}</environment>
-        <applicationName>${project.artifactId}</applicationName>
-        <runtimeVersion>${app.runtime}</runtimeVersion>
-        <workers>1</workers>
-        <workerType>MICRO</workerType>
-        <region>eu-west-1</region>
-      </anypointPlatform>
-    </deployment>
-  </configuration>
-</plugin>
+    <plugins>
+        <!-- Clean plugin -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.2.0</version>
+        </plugin>
 
-		</plugins>
-	</build>
+        <!-- Mule Maven Plugin for CloudHub deployment -->
+        <plugin>
+            <groupId>org.mule.tools.maven</groupId>
+            <artifactId>mule-maven-plugin</artifactId>
+            <version>${mule.maven.plugin.version}</version>
+            <extensions>true</extensions>
+            <configuration>
+                <cloudHubDeployment>
+                    <uri>https://eu1.anypoint.mulesoft.com</uri>
+                    <muleVersion>${app.runtime}</muleVersion>
+                    <username>${anypoint.username}</username>
+                    <password>${anypoint.password}</password>
+                    <applicationName>${project.artifactId}</applicationName>
+                    <environment>${anypoint.environment}</environment>
+                    <region>eu-west-1</region>
+                    <workers>1</workers>
+                    <workerType>MICRO</workerType>
+                </cloudHubDeployment>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
 
 	<dependencies>
 		<dependency>
