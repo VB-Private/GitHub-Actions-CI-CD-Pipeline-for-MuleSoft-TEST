@@ -16,7 +16,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-"Successful Github Actions CI/CD Pipeline"]]></ee:set-payload>
+"Successfuly Github Actions CI/CD Pipeline"]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
 		<logger level="INFO" doc:name="LOG-Github Actions CI/CD Pipeline completed" doc:id="2480e499-a895-4100-a866-6ed3095f68da" message='#["Github Actions CI/CD Pipeline completed at: "++ now()]'/>
