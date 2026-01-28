@@ -25,11 +25,27 @@
 				<version>3.2.0</version>
 			</plugin>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-			</plugin>
+  <groupId>org.mule.tools.maven</groupId>
+  <artifactId>mule-maven-plugin</artifactId>
+  <version>${mule.maven.plugin.version}</version>
+  <extensions>true</extensions>
+  <configuration>
+    <deployment>
+      <anypointPlatform>
+        <username>${anypoint.username}</username>
+        <password>${anypoint.password}</password>
+        <organization>${anypoint.organization}</organization>
+        <environment>${anypoint.environment}</environment>
+        <applicationName>${project.artifactId}</applicationName>
+        <runtimeVersion>${app.runtime}</runtimeVersion>
+        <workers>1</workers>
+        <workerType>MICRO</workerType>
+        <region>eu-west-1</region>
+      </anypointPlatform>
+    </deployment>
+  </configuration>
+</plugin>
+
 		</plugins>
 	</build>
 
