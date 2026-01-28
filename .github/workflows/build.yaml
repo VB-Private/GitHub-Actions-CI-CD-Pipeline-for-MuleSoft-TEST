@@ -61,10 +61,11 @@ jobs:
         ENV: Sandbox
       run: |
         artifactName=$(ls *.jar | head -1)
-         echo "$USERNAME" 
+        echo "HI!"
+        echo "$USERNAME i am there!" 
         mvn deploy -DskipMunitTests -DmuleDeploy \
-         -Dmule.artifact=$artifactName \
-          -Danypoint.username="$USERNAME" \
-         -Danypoint.password="$PASSWORD" 
+        -Dmule.artifact=$artifactName \
+        -Danypoint.username="$USERNAME" \
+        -Danypoint.password="$PASSWORD" 
           
          
