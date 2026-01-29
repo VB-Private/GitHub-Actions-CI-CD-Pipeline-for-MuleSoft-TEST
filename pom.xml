@@ -4,7 +4,7 @@
 
 	<groupId>4b9988d4-4a8f-43ec-9dda-6a6dac1295dd</groupId>
 	<artifactId>githubactionsci-cdpipeline</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<packaging>mule-application</packaging>
 
 	<name>githubactionsci-cdpipeline</name>
@@ -13,7 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   <env>Sandbox</env>
-		<app.runtime>4.9.0</app.runtime>
+		<app.runtime>4.10.2</app.runtime>
 		<mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
 	</properties>
 
@@ -37,7 +37,7 @@
             <target>Cloudhub-EU-Central-1</target>
             <server>Repository</server>
             <applicationName>${project.artifactId}</applicationName>
-            <releaseChannel>NONE</releaseChannel>
+            <releaseChannel>EDGE</releaseChannel>
             <replicas>1</replicas>
             <vCores>0.1</vCores>
             <deploymentSettings>
